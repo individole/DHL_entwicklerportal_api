@@ -342,7 +342,7 @@ class DHLParcel {
 	// ----------------------------------------------------------
 	private function export_exists($bind) {
 		
-		if ( strtoupper($this->shipment[$bind]['destination_type']) == "INTERNATIONAL") {
+		if (isset($this->shipment[$bind]['destination_type']) && strtoupper($this->shipment[$bind]['destination_type']) == "INTERNATIONAL") {
 			if ( isset($this->export[$bind]) )
 				return TRUE;
 			else
