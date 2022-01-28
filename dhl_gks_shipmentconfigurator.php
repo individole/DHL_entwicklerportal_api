@@ -149,7 +149,7 @@ class DHLParcel {
 	// add your company info
 	// ----------------------------------------------------------
 	public function addCompany($useDHLLeitcodierung, $company_name1, $company_name2, $company_name3, $street_name, $street_number, $zip, $city, $country, $countryISOCode, $email, $phone, $internet, $contactPerson, $reference="") {
-		if ($phone[0] == "+")
+		if (substr($phone, 0, 1) == "+")
 			$phone = "+" . trim(preg_replace('![^0-9]!', '', $phone));
 		else 
 			$phone = trim(preg_replace('![^0-9]!', '', $phone));
